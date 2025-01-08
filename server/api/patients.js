@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
-const Patient = require('../models/patient');  // Assuming you put the model in a separate file
+const Patient = require('../models/patients');  // Assuming you put the model in a separate file
 
 // Connect to MongoDB (only when required)
 if (mongoose.connection.readyState === 0) {
-  mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+    mongoose.connect(process.env.MONGODB_URI)
+    .then(() => console.log('Connected to MongoDB'))
+    .catch((err) => console.log('Error connecting to MongoDB:', err));
 }
 
 module.exports = async (req, res) => {
