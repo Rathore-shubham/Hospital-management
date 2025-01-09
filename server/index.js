@@ -8,9 +8,9 @@ const app = express();
 
 // Enable CORS and parse incoming JSON data
 const corsOptions = {
-    origin: 'http://localhost:3000', // Allow only this origin
-    methods: ['GET', 'POST', 'DELETE'], // Specify allowed HTTP methods
-    allowedHeaders: ['Content-Type'], // Specify allowed headers
+    origin: ['http://localhost:3000','https://hospital-management-f.vercel.app'],
+    methods: ['GET', 'POST', 'DELETE'], 
+    allowedHeaders: ['Content-Type'], 
   };
 app.use(cors(corsOptions)); 
 app.use(express.json());
